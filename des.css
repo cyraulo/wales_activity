@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+}
+
+body {
+    background: url(cyy.images/bb\ \(2\).png) no-repeat center center fixed; 
+    background-size: cover; 
+    color: #fff; 
+    line-height: 1.5;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white; 
+    padding: 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+header h1 {
+    margin: 0; 
+}
+
+h2 {
+    text-align: left;
+    font-size: 2em; 
+    margin-bottom: 20px; 
+    color: #fff; 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0; 
+    display: flex; 
+}
+
+nav ul li {
+    margin: 0 10px; 
+}
+
+nav ul li a {
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+    align-items: center;
+    -moz-box-align: center;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3); 
+}
+
+main {
+    flex: 1; 
+    padding: 20px;
+    max-width: 500px; 
+    margin: 20px auto; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 5px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+    align-items: center;
+}
+
+footer {
+    text-align: end; 
+    padding: 10px 0; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white; 
+    width: 100%; 
+}
