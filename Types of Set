@@ -1,0 +1,123 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] setU = new int[5];
+        System.out.println("Input Universal Set: ");
+        for (int u = 0; u < setU.length; u++) {
+            System.out.print("No.U " + (u + 1) + ": ");
+            setU[u] = scanner.nextInt();
+        }
+
+        int[] setA = new int[5];
+        System.out.println("\nInput Set A: ");
+        for (int a = 0; a < setA.length; a++) {
+            System.out.print("Number " + (a + 1) + ": ");
+            setA[a] = scanner.nextInt();
+        }
+
+        int[] setB = new int[5];
+        System.out.println("\nInput Set B: ");
+        for (int b = 0; b < setB.length; b++) {
+            System.out.print("Number " + (b + 1) + ": ");
+            setB[b] = scanner.nextInt();
+        }
+
+        System.out.println("\nTypes of Set Operations: ");
+        System.out.println("1. Union\n2. Intersection\n3. Difference\n4. Complement");
+        System.out.print("\nInput your option: ");
+        int pick = scanner.nextInt();
+
+        switch (pick) {
+            case 1: // Union !numbers should not be doubled
+                System.out.println("\nThe Union of A & B: ");
+                for (int a = 0; a < setA.length; a++) {
+                    System.out.print(setA[a] + " ");
+                }
+                for (int b = 0; b < setB.length; b++) {
+                    boolean dup = false;
+                    for (int a = 0; a < setA.length; a++) {
+                        if (setB[b] == setA[a]) {
+                            dup = true;
+                            break;
+                        }
+                    }
+                    if (!dup) {
+                        System.out.print(setB[b] + " ");
+                    }
+                }
+                System.out.println();
+                break;
+
+            case 2: // Intersection DONE !
+                System.out.println("\nIntersection between A & B: ");
+                boolean sameIn = false;
+                for (int a = 0; a < setA.length; a++) {
+                    for (int b = 0; b < setB.length; b++) {
+                        if (setA[a] == setB[b]) {
+                            System.out.print(setA[a] + " ");
+                            sameIn = true;
+                            break;
+                        }
+                    }
+                }
+                if (!sameIn) {
+                    System.out.println("\nThere's no Intersection");
+                }
+                System.out.println();
+                break;
+
+            case 3: // Difference !Set B is not scanned 
+                System.out.println("\nThe Difference between A - B:");
+                boolean dif = false;
+                for (int a = 0; a < setA.length; a++) {
+                    boolean samed = false;
+                    for (int b = 0; b < setB.length; b++) {
+                        if (setA[a] == setB[b]) {
+                            samed = true;
+                            break;
+                        }
+                    }
+                    if (!samed) {
+                        System.out.print(setA[a] + " ");
+                        dif = true;
+                    }
+                }
+                if (!dif) {
+                    System.out.println("\nThere's no difference");
+                }
+                System.out.println();
+                break;
+
+            case 4: // Complement  DONE
+                System.out.print("\nThe Complement of A: ");
+                boolean compleFound = false;
+                for (int u = 0; u < setU.length; u++) {
+                    boolean foundInA = false;
+                    for (int a = 0; a < setA.length; a++) {
+                        if (setU[u] == setA[a]) {
+                            foundInA = true;
+                            break;
+                        }
+                    }
+                    if (!foundInA) {
+                        System.out.print(setU[u] + " ");
+                        compleFound = true;
+                    }
+                }
+                if (!compleFound) {
+                    System.out.print("\nThere's no Complement");
+                }
+                System.out.println();
+                break;
+                
+            default :
+                System.out.println("Invalid Input");
+                break;
+        } 
+
+        scanner.close();
+    }
+}
